@@ -4,9 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NavModule } from './nav/navbar.module';
+import { StoreModule } from '@ngrx/store';
+
+import { LayoutModule } from './layout/layout.module';
 
 import { AppComponent } from './app.component';
+
+import { reducer } from './app.reducers';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,9 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    NavModule
+    LayoutModule,
+
+    StoreModule.provideStore(reducer),
   ],
   providers: [],
   bootstrap: [AppComponent]
