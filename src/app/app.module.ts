@@ -2,28 +2,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MdSidenavModule, MdToolbarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { StoreModule } from '@ngrx/store';
-
-import { LayoutModule } from './layout/layout.module';
+import { CoreStoreModule } from './store';
 
 import { AppComponent } from './app.component';
-
-import { reducer } from './app.reducers';
+import { TopBarComponent } from './components';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpModule,
-    LayoutModule,
-
-    StoreModule.provideStore(reducer),
+    CoreStoreModule,
+    MdSidenavModule,
+    MdToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

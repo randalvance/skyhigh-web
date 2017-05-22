@@ -1,3 +1,7 @@
-<app-container>
-
-</app-container>
+<md-sidenav-container (backdropClick)="closeSidenav()">
+  <app-topbar (openMenu)="openSidenav()">
+  </app-topbar>
+  <md-sidenav [opened]="showSidenav$ | async">
+    Menu goes here!
+  </md-sidenav>
+</md-sidenav-container>
