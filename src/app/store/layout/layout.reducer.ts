@@ -11,9 +11,9 @@ const initialState: LayoutState = {
 
 export function layoutReducer(state = initialState, action: Action): LayoutState {
   switch (action.type) {
-    case LayoutActions.SIDENAV_OPEN:
+    case LayoutActions.OPEN_SIDENAV:
       return Object.assign({}, state, { showSidenav: true });
-    case LayoutActions.SIDENAV_CLOSE:
+    case LayoutActions.CLOSE_SIDENAV:
       return Object.assign({}, state, { showSidenav: false });
     default:
       return state;
