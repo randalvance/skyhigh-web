@@ -1,4 +1,5 @@
 # SkyhighWeb
+[![Build Status](https://travis-ci.org/randalvance/skyhigh-web.svg?branch=master)](https://travis-ci.org/randalvance/skyhigh-web)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.
 
