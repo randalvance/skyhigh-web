@@ -1,3 +1,3 @@
 export * from './layout.reducer';
 export * from './layout.actions';
-export * from './layout.selector';
+export * from './layout.selectors';

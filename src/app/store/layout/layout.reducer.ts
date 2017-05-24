@@ -19,9 +19,3 @@ export function layoutReducer(state = initialState, action: Action): LayoutState
       return state;
   }
 }
-
-export const layoutRegister = {
-  reducer: { layoutReducer },
-  actions: LayoutActions
-};
-

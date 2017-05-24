@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-topbar',
@@ -7,6 +7,8 @@ import { Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy } from
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TopBarComponent implements OnInit {
+
+  @Input() siteName: string;
 
   @Output() openMenu = new EventEmitter();
 

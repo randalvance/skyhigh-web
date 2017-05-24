@@ -2,17 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MdSidenavModule, MdToolbarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MdIconModule, MdListModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
 
 import { CoreStoreModule } from './store';
 
 import { AppComponent } from './app.component';
-import { TopBarComponent } from './components';
+import { NavigationComponent, TopBarComponent } from './components';
+
+import { ConfigurationService } from './shared/services';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavigationComponent,
     TopBarComponent
   ],
   imports: [
@@ -21,10 +25,15 @@ import { TopBarComponent } from './components';
     FormsModule,
     HttpModule,
     CoreStoreModule,
+
+    MdIconModule,
+    MdListModule,
     MdSidenavModule,
     MdToolbarModule
   ],
-  providers: [],
+  providers: [
+    ConfigurationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
