@@ -14,23 +14,31 @@
   .menu {
     list-style: none;
     padding-left: 0;
-    margin: 20px 0 0 0;
 
     li a {
+      display: block;
       padding: 0.8rem 2rem;
       position: relative;
-      color: $sidebarMenuColor;
+      color: $sidebarMenuFontColor;
       font-weight: 500;
-      display: block;
+      text-decoration: none;
+
+      &:hover {
+        color: $sidebarMenuFontColorHovered;
+      }
+
+      &:focus {
+        outline: none;
+      }
 
       md-icon {
         vertical-align: top;
-        font-size: 1.3rem;
         position: relative;
         top: 0.15rem;
         width: 1.5rem;
-        text-align: center;
         margin-right: 0.6rem;
+        font-size: 1.3rem;
+        text-align: center;
       }
     }
   }
