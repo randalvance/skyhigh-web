@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
-interface SiteConfig {
-  siteName: string
+export const siteConfig : SiteConfig = {
+  siteName: 'Unknown Site'
 }
 
-export const siteConfig : SiteConfig = {
-  siteName: 'My Awesome Site'
+interface SiteConfig {
+  siteName: string
 }

@@ -9,15 +9,18 @@ import { MdIconModule, MdListModule, MdSidenavModule, MdToolbarModule } from '@a
 import { CoreStoreModule } from './store';
 
 import { AppComponent } from './app.component';
-import { NavigationComponent, TopBarComponent } from './components';
+import { NavigationComponent, TopBarComponent, WelcomeComponent } from './components';
 
 import { ConfigurationService } from './shared/services';
+
+import { appRouting } from './app.routing';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    TopBarComponent
+    TopBarComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -29,7 +32,9 @@ import { ConfigurationService } from './shared/services';
     MdIconModule,
     MdListModule,
     MdSidenavModule,
-    MdToolbarModule
+    MdToolbarModule,
+
+    appRouting
   ],
   providers: [
     ConfigurationService

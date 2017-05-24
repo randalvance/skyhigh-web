@@ -1,0 +1,37 @@
+@import '../../../styles/colors';
+
+.navigation {
+  width: 21rem;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  padding-top: 1rem;
+  height: 100%;
+  background-color: $backgroundColor;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  overflow-y: auto;
+
+  .menu {
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0 0 0;
+
+    li a {
+      padding: 0.8rem 2rem;
+      position: relative;
+      color: $sidebarMenuColor;
+      font-weight: 500;
+      display: block;
+
+      md-icon {
+        vertical-align: top;
+        font-size: 1.3rem;
+        position: relative;
+        top: 0.15rem;
+        width: 1.5rem;
+        text-align: center;
+        margin-right: 0.6rem;
+      }
+    }
+  }
+}
