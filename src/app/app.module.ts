@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MdIconModule, MdListModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
+import { MdCardModule, MdIconModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
 
 import { CoreStoreModule } from './store';
 
 import { AppComponent } from './app.component';
-import { NavigationComponent, TopBarComponent, WelcomeComponent } from './components';
+import { HeaderComponent, NavigationComponent, WelcomeComponent } from './components';
 
 import { ConfigurationService } from './shared/services';
 
@@ -19,7 +19,7 @@ import { appRouting } from './app.routing';
   declarations: [
     AppComponent,
     NavigationComponent,
-    TopBarComponent,
+    HeaderComponent,
     WelcomeComponent
   ],
   imports: [
@@ -29,8 +29,8 @@ import { appRouting } from './app.routing';
     HttpModule,
     CoreStoreModule,
 
+    MdCardModule,
     MdIconModule,
-    MdListModule,
     MdSidenavModule,
     MdToolbarModule,
 

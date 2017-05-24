@@ -6,7 +6,7 @@ export interface LayoutState {
 }
 
 const initialState: LayoutState = {
-  showSidenav: false
+  showSidenav: true
 };
 
 export function layoutReducer(state = initialState, action: Action): LayoutState {

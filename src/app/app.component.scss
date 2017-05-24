@@ -1,3 +1,5 @@
+@import '../styles/colors.scss';
+
 md-sidenav-container {
   margin: 0;
   width: 100%;
@@ -6,4 +8,9 @@ md-sidenav-container {
 
 md-sidenav {
   width: 200px;
+}
+
+.app-container {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
 }
