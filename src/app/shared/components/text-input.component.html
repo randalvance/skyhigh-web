@@ -7,5 +7,5 @@
         (blur)="touch()"
         [(ngModel)]="value"
         [ngClass]="{invalid: ngControl.touched && !ngControl.valid}" />
-  <na-validation *ngIf="ngControl.touched && !ngControl.valid" [errors]="ngControl.errors" [fieldName]="label"></na-validation>
+  <app-validation *ngIf="ngControl.touched && !ngControl.valid" [errors]="ngControl.errors" [fieldName]="label"></app-validation>
 </div>

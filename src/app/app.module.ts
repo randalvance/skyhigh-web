@@ -12,6 +12,7 @@ import { StudentsModule } from './students/students.module';
 
 import { AppComponent } from './app.component';
 import { Four04Component, WelcomeComponent } from './components';
+import { HeaderComponent, SidebarComponent, SidebarItemComponent } from './layout';
 
 import { ConfigurationService } from './shared/services';
 
@@ -21,6 +22,9 @@ import { appRouting } from './app.routing';
   declarations: [
     AppComponent,
     Four04Component,
+    HeaderComponent,
+    SidebarComponent,
+    SidebarItemComponent,
     WelcomeComponent
   ],
   imports: [

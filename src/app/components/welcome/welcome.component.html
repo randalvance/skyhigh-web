@@ -1,38 +1,4 @@
-<md-card>
-  <md-card-header>
-    <md-card-title>
-      <h1>Welcome</h1>
-    </md-card-title>
-  </md-card-header>
-
-  <md-card-content>
-    <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie tempus malesuada. Fusce sit amet massa molestie,
-      lobortis erat eu, pellentesque libero. Aliquam feugiat nulla vitae lectus facilisis tincidunt eget sit amet elit. Morbi
-      in placerat purus, eu eleifend mauris. Maecenas et finibus ligula, ac molestie orci. Praesent eget velit ipsum. Nullam
-      dapibus maximus facilisis. Etiam risus eros, efficitur quis quam in, mattis dictum massa.</p>
-
-    <p>Phasellus consequat tincidunt sem eget egestas. Donec eu tincidunt orci. Mauris vehicula dolor in elementum semper. Aenean
-      laoreet nisi non tempor placerat. Vivamus aliquet vel risus eu luctus. Aliquam dui neque, convallis et lacus id, consequat
-      fermentum est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam ac felis vulputate enim tempor
-      euismod varius eu justo. Ut sit amet eleifend libero. Nunc interdum eu nunc nec aliquam. Pellentesque sollicitudin
-      odio quis ante lobortis, pulvinar malesuada tellus convallis.</p>
-
-    <p>Donec mi leo, congue nec dui quis, commodo pretium enim. Suspendisse sed aliquam sapien, dignissim viverra arcu. Mauris
-      felis libero, blandit at mi quis, gravida facilisis libero. Morbi ac lacinia mauris, eget sodales mauris. Cras ac hendrerit
-      justo. Praesent neque ipsum, consectetur non luctus sit amet, mollis vel eros. Nullam eu risus in eros efficitur pellentesque
-      sit amet a felis. Suspendisse leo enim, tincidunt non rhoncus quis, egestas sit amet justo. Proin a purus blandit,
-      malesuada metus vel, auctor lectus. In accumsan purus eu nulla cursus lacinia.</p>
-
-    <p>Nulla fringilla justo vitae lacus volutpat semper. Quisque sit amet pharetra odio, sit amet laoreet nulla. Donec a sagittis
-      neque. Ut non nunc at sem mattis ultrices ac ut urna. Donec et eros quis ipsum consequat bibendum. Sed maximus scelerisque
-      malesuada. Mauris consectetur felis nec sollicitudin hendrerit. Proin efficitur feugiat elit, ac feugiat mi volutpat
-      vel. Aenean sodales magna nec mauris varius hendrerit. Donec semper congue dapibus. Morbi tempor, erat ut suscipit
-      euismod, magna metus congue purus, sit amet accumsan urna mauris eget arcu. Ut ultrices bibendum ultrices. Nam interdum
-      at tellus quis placerat.</p>
-
-    <p>Nam vel nulla consequat, sodales massa vel, interdum quam. Nam quis placerat libero. Morbi laoreet, sem eget molestie
-      hendrerit, ipsum ex lobortis eros, vitae pretium eros leo non orci. Ut orci massa, dictum et scelerisque sed, accumsan
-      eget mauris. Morbi tortor purus, placerat a eleifend vel, congue at justo. Phasellus iaculis posuere orci ut porta.
-      Pellentesque eget nibh feugiat, tempor ex laoreet, egestas odio.</p>
-  </md-card-content>
-</md-card>
+<div class="row">
+  <app-quickstart-card [title]="'Enroll New Student'" (primaryButtonClicked)="enrollNewStudent()"></app-quickstart-card>
+  <app-quickstart-card [title]="'Enroll Existing Student'" (primaryButtonClicked)="enrollExistingStudent()"></app-quickstart-card>
+</div>

@@ -4,7 +4,7 @@ import { SidebarItem } from "../shared/models";
 
 @Component({
   moduleId: module.id,
-  selector: "na-sidebar-item",
+  selector: "app-sidebar-item",
   templateUrl: "sidebar-item.component.html"
 })
 export class SidebarItemComponent implements OnInit {
