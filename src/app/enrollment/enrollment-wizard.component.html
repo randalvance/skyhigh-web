@@ -1,0 +1,17 @@
+<app-box>
+  <app-wizard>
+    <app-wizard-step [title]="'Create New Student'">
+      <app-box>
+        <app-student-edit-form (save)="saveStudent($event)"></app-student-edit-form>
+      </app-box>
+    </app-wizard-step>
+    <app-wizard-step [title]="'Select Subjects'">
+      <app-box>
+        <app-subject-selection></app-subject-selection>
+      </app-box>
+    </app-wizard-step>
+    <app-wizard-step [title]="'Select Section'">
+      <app-box>Content 3</app-box>
+    </app-wizard-step>
+  </app-wizard>
+</app-box>

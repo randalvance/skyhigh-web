@@ -5,19 +5,25 @@ import { storeFreeze } from 'ngrx-store-freeze';
 
 import { LayoutState, LayoutActions, layoutReducer } from './layout';
 import { SiteState, SiteActions, siteReducer } from './site';
+import { EnrollmentState, EnrollmentActions, enrollmentReducer } from './enrollment';
 
 export interface AppState {
   site: SiteState,
-  layout: LayoutState
+  layout: LayoutState,
+  enrollment: EnrollmentState
 }
 
 // It is important that the key of reducer here matches the key of store in the AppState for each reducer
 export const AppReducers = {
-  layout: layoutReducer
+  layout: layoutReducer,
+  site: siteReducer,
+  enrollment: enrollmentReducer
 };
 
 export const AppActions = [
-  LayoutActions
+  LayoutActions,
+  SiteActions,
+  EnrollmentActions
 ]
 
 const developmentReducer: ActionReducer<AppState> = compose(storeFreeze, combineReducers)(AppReducers);

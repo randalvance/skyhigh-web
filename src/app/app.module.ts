@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MdCardModule, MdIconModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
+import { CoreStoreModule } from './stores';
 
-import { CoreStoreModule } from './store';
+import { SharedModule } from './shared/shared.module';
+import { EnrollmentModule } from './enrollment/enrollment.module';
+import { StudentsModule } from './students/students.module';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent, NavigationComponent, WelcomeComponent } from './components';
+import { Four04Component, WelcomeComponent } from './components';
 
 import { ConfigurationService } from './shared/services';
 
@@ -18,8 +20,7 @@ import { appRouting } from './app.routing';
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
-    HeaderComponent,
+    Four04Component,
     WelcomeComponent
   ],
   imports: [
@@ -29,10 +30,9 @@ import { appRouting } from './app.routing';
     HttpModule,
     CoreStoreModule,
 
-    MdCardModule,
-    MdIconModule,
-    MdSidenavModule,
-    MdToolbarModule,
+    SharedModule,
+    EnrollmentModule,
+    StudentsModule,
 
     appRouting
   ],

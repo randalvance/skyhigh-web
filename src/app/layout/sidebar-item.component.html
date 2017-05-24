@@ -1,0 +1,11 @@
+<li [class.open]="isOpen">
+    <a href="#" (click)="itemClicked()"><i [class]="'fa fa-' + item.icon"></i>
+      <span class="title">{{item.text}}</span>
+      <span *ngIf="item.children" class="arrow" [class.open]="isOpen"></span>
+    </a>
+    <ul *ngIf="item.children" [hidden]="!isOpen" class="sub-menu">
+      <li *ngFor="let child of item.children"><a href="#"
+        [routerLink]="child.route" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">{{child.text}}</a></li>
+    </ul>
+</li>

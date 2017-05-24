@@ -1,0 +1,33 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.box {
+  background-color: $backgroundColor;
+  margin: 15px 0;
+  padding: 20px 30px;
+  border: 1px solid #e8e8e8;
+  border-top: 0;
+
+  @include box-shadow(0, 1px, 3px);
+
+  .panel_header {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+
+    .title {
+      font-family: $contentHeadingFont;
+      font-size: 19px;
+      line-height: 30px;
+      color: #676767;
+      font-weight: 400;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+  }
+
+  .content {
+    min-height: 100px;
+  }
+}
