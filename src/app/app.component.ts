@@ -37,6 +37,9 @@ export class AppComponent implements OnInit {
   }
 
   changeSidebarItem(item: SidebarItem) {
+    if (item && item.route && !item.children) {
+      this.router.navigateByUrl(item.route);
+    }
     this.store.dispatch(this.layoutActions.selectSidebarItem(item));
   }
 }
