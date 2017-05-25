@@ -8,8 +8,8 @@ import { SiteState, SiteActions, siteReducer } from './site';
 import { EnrollmentState, EnrollmentActions, enrollmentReducer } from './enrollment';
 
 export interface AppState {
-  site: SiteState,
   layout: LayoutState,
+  site: SiteState,
   enrollment: EnrollmentState
 }
 

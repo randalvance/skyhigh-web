@@ -1,7 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from'./components/header/header.component';
 
 import { MdSidenavModule, MdToolbarModule } from '@angular/material';
 import { CoreStoreModule } from './stores';

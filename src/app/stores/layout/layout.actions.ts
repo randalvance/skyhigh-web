@@ -3,11 +3,16 @@ import { Action } from '@ngrx/store';
 
 import { ActionCreatorFactory } from 'ngrx-action-creator-factory';
 
+import { SidebarItem } from '../../shared/models';
+
 @Injectable()
 export class LayoutActions {
-  static OPEN_SIDENAV = '[LAYOUT] OPEN_SIDENAV';
-  static CLOSE_SIDENAV = '[LAYOUT] CLOSE_SIDENAV';
+  static SELECT_SIDEBARITEM = '[Layout] SELECT_SIDEBARITEM';
 
-  openSidenav = ActionCreatorFactory.create(LayoutActions.OPEN_SIDENAV);
-  closeSidenav = ActionCreatorFactory.create(LayoutActions.CLOSE_SIDENAV);
+  selectSidebarItem = (sidebarItem: SidebarItem) : Action => {
+    return {
+      type: LayoutActions.SELECT_SIDEBARITEM,
+      payload: sidebarItem
+    };
+  }
 }

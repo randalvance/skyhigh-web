@@ -2,19 +2,17 @@ import { Action } from '@ngrx/store';
 import { LayoutActions } from './layout.actions';
 
 export interface LayoutState {
-  showSidenav: boolean;
+  selectedSidebarItemRoute: string;
 }
 
 const initialState: LayoutState = {
-  showSidenav: true
+  selectedSidebarItemRoute: '/'
 };
 
 export function layoutReducer(state = initialState, action: Action): LayoutState {
   switch (action.type) {
-    case LayoutActions.OPEN_SIDENAV:
-      return Object.assign({}, state, { showSidenav: true });
-    case LayoutActions.CLOSE_SIDENAV:
-      return Object.assign({}, state, { showSidenav: false });
+    case LayoutActions.SELECT_SIDEBARITEM:
+      return Object.assign({}, state, { selectedSidebarItemRoute : action.payload.route });
     default:
       return state;
   }

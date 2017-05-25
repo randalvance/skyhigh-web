@@ -7,4 +7,4 @@ import { AppState } from '../reducers';
 export const getLayoutState = (state: AppState) => {
   return state.layout;
 }
-export const getShowSidenav = createSelector(getLayoutState, state => state.showSidenav);
+export const getSelectedSidebarItemRoute = createSelector(getLayoutState, state => state.selectedSidebarItemRoute);

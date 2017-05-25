@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Router, NavigationEnd } from "@angular/router";
 import { SidebarItem } from "../shared/models";
 
@@ -9,8 +9,9 @@ import { SidebarItem } from "../shared/models";
 })
 export class SidebarItemComponent implements OnInit {
   @Input() private item: SidebarItem;
+  @Output() private itemClicked: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
 
-  private isOpen: boolean = false;
+  @Input() private isOpen: boolean = false;
 
   constructor() {
   }
@@ -18,7 +19,7 @@ export class SidebarItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  itemClicked() {
-
+  emitItemClicked() {
+    this.itemClicked.emit(this.item);
   }
 }
