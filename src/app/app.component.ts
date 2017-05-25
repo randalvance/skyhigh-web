@@ -17,13 +17,13 @@ export class AppComponent implements OnInit {
   selectedSidebarItemRoute$: Observable<string>;
 
   constructor(
-    private store: Store<LayoutState>,
+    private store: Store<AppState>,
     private router: Router,
     private config: ConfigurationService,
     private layoutActions: LayoutActions) {
 
     this.siteName = this.config.getSiteConfig().siteName;
-    //this.selectedSidebarItemRoute$ = this.store.select(getSelectedSidebarItemRoute);
+    this.selectedSidebarItemRoute$ = this.store.select(getSelectedSidebarItemRoute);
   }
 
   ngOnInit() {
@@ -37,8 +37,6 @@ export class AppComponent implements OnInit {
   }
 
   changeSidebarItem(item: SidebarItem) {
-    console.log(this.layoutActions.selectSidebarItem(item));
-
     this.store.dispatch(this.layoutActions.selectSidebarItem(item));
   }
 }

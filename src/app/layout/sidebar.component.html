@@ -3,7 +3,6 @@
     <div class="profile-info row">
 
     </div>
-
     <ul class="wraplist">
       <app-sidebar-item *ngFor="let item of sidebarItems" [item]="item" [isOpen]="isOpen(item)" (itemClicked)="emitSidebarItemChanged($event)"></app-sidebar-item>
     </ul>

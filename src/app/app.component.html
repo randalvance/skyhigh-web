@@ -2,7 +2,7 @@
 <div class="page-container row-fluid container-fluid">
 
   <app-sidebar (sidebarItemChanged)="changeSidebarItem($event)"
-    [selectedSidebarItemRoute]="selectedSidebarItemRoute | async"></app-sidebar>
+    [selectedSidebarItemRoute]="selectedSidebarItemRoute$ | async"></app-sidebar>
 
   <section class="main-content">
     <section class="wrapper main-wrapper row">
