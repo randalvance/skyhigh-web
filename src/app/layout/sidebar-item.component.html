@@ -1,5 +1,5 @@
 <li [class.open]="isOpen">
-    <a href="#" (click)="emitItemClicked()"><i [class]="'fa fa-' + item.icon"></i>
+    <a href="#" (click)="emitItemClicked(item)"><i [class]="'fa fa-' + item.icon"></i>
       <span class="title">{{item.text}}</span>
       <span *ngIf="item.children" class="arrow" [class.open]="isOpen"></span>
     </a>

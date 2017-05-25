@@ -3,5 +3,6 @@ export interface SidebarItem {
   route?: string,
   icon?: string,
   displayOrder?: number,
-  children?: SidebarItem[]
+  children?: SidebarItem[],
+  isRoot?: boolean
 }

@@ -10,6 +10,7 @@ import { SidebarItem } from "../shared/models";
 export class SidebarItemComponent implements OnInit {
   @Input() private item: SidebarItem;
   @Output() private itemClicked: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
+  @Output() private childItemClicked: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
 
   @Input() private isOpen: boolean = false;
 
@@ -19,7 +20,8 @@ export class SidebarItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  emitItemClicked() {
-    this.itemClicked.emit(this.item);
+  emitItemClicked(item: SidebarItem) {
+    this.itemClicked.emit(item);
+    return false;
   }
 }

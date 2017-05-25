@@ -1,7 +1,8 @@
 <app-header></app-header>
 <div class="page-container row-fluid container-fluid">
 
-  <app-sidebar (sidebarItemChanged)="changeSidebarItem($event)"
+  <app-sidebar
+    (itemChanged)="changeSidebarItem($event)"
     [selectedSidebarItemRoute]="selectedSidebarItemRoute$ | async"></app-sidebar>
 
   <section class="main-content">
@@ -9,7 +10,7 @@
       <div class="col-xs-12">
         <div class="page-title">
           <div class="pull-left">
-            <h1 class="title">{{title}}</h1>
+            <h1 class="title">{{title$ | async}}</h1>
           </div>
           <div class="pull-right hidden-xs-down"></div>
         </div>

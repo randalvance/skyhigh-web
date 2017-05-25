@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
+import { RouterStoreModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppActions, AppReducers } from './reducers';
 import { environment } from '../../environments/environment';
@@ -13,6 +14,7 @@ if (!environment.production) {
 @NgModule({
   imports:  [
     StoreModule.provideStore(AppReducers),
+    RouterStoreModule.connectRouter(),
     ...optionalImports
   ],
   declarations: [],

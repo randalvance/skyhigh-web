@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output }  from '@angular/core';
 import { EnrollmentSidebarItems } from '../enrollment/enrollment.sidebaritems';
 //import { ProfessorsSidebarItems } from '../professors/professors.sidebaritems';
-//import { StudentsSidebarItems } from '../students/students.sidebaritems';
+import { StudentsSidebarItems } from '../students/students.sidebaritems';
 import { SidebarItem } from '../shared/models';
 
 @Component({
@@ -9,18 +9,19 @@ import { SidebarItem } from '../shared/models';
   templateUrl: 'sidebar.component.html'
 })
 export class SidebarComponent {
-  @Output() private sidebarItemChanged: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
+  @Output() private itemChanged: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
+  @Output() private childItemChanged: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
   @Input() private selectedSidebarItemRoute: string;
 
   public sidebarItems = [
-    { text: 'Dashboard', icon: 'dashboard', route: '/', displayOrder: 1 },
+    { text: 'Dashboard', icon: 'dashboard', route: '/', displayOrder: 1, isRoot: true },
     ...EnrollmentSidebarItems,
     //...ProfessorsSidebarItems,
-    //...StudentsSidebarItems
+    ...StudentsSidebarItems
   ].sort((a, b) => a.displayOrder > b.displayOrder ? 1 : a.displayOrder < b.displayOrder ? -1 : 0);
 
-  emitSidebarItemChanged(item: SidebarItem) {
-    this.sidebarItemChanged.emit(item);
+  emitItemChanged(item: SidebarItem) {
+    this.itemChanged.emit(item);
   }
 
   isOpen(item: SidebarItem) {

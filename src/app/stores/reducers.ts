@@ -1,6 +1,7 @@
 import { environment } from '../../environments/environment';
 import { compose } from '@ngrx/core/compose';
 import { ActionReducer, combineReducers } from '@ngrx/store';
+import { routerReducer, RouterState} from '@ngrx/router-store';
 import { storeFreeze } from 'ngrx-store-freeze';
 
 import { LayoutState, LayoutActions, layoutReducer } from './layout';
@@ -8,6 +9,7 @@ import { SiteState, SiteActions, siteReducer } from './site';
 import { EnrollmentState, EnrollmentActions, enrollmentReducer } from './enrollment';
 
 export interface AppState {
+  router: RouterState
   layout: LayoutState,
   site: SiteState,
   enrollment: EnrollmentState
@@ -15,6 +17,7 @@ export interface AppState {
 
 // It is important that the key of reducer here matches the key of store in the AppState for each reducer
 export const AppReducers = {
+  router: routerReducer,
   layout: layoutReducer,
   site: siteReducer,
   enrollment: enrollmentReducer
