@@ -6,6 +6,6 @@
     <ul *ngIf="item.children" [hidden]="!isOpen" class="sub-menu">
       <li *ngFor="let child of item.children"><a href="#"
         [routerLink]="child.route" routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}">{{child.text}}</a></li>
+        [routerLinkActiveOptions]="{ exact: true }">{{child.text}}</a></li>
     </ul>
 </li>

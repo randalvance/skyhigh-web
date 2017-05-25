@@ -5,8 +5,7 @@
     </div>
     <ul class="wraplist">
       <app-sidebar-item *ngFor="let item of sidebarItems" [item]="item" [isOpen]="isOpen(item)"
-          (itemClicked)="emitItemChanged($event)"
-          (childItemClicked)="emitChildItemChanbed($event)"></app-sidebar-item>
+          (itemClicked)="emitItemChanged($event)"></app-sidebar-item>
     </ul>
   </div>
 </div>

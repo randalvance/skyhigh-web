@@ -1,28 +1,25 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { AppState } from "../stores";
+import { AppState, LayoutActions } from "../stores";
 import { EnrollmentActions } from "../stores/enrollment";
 import { WizardComponent } from "../shared/components";
+import { PageComponentBase } from '../shared/components';
 
 @Component({
   moduleId: module.id,
   selector: "na-enrollment-wizard",
   templateUrl: "enrollment-wizard.component.html"
 })
-export class EnrollmentWizardComponent implements OnInit {
+export class EnrollmentWizardComponent extends PageComponentBase implements OnInit {
 
   @ViewChild(WizardComponent) wizard: WizardComponent;
 
-  constructor(
-    private store: Store<AppState>,
+  constructor(store: Store<AppState>, layoutActions: LayoutActions,
     private enrollmentActions: EnrollmentActions) {
+      super(store, layoutActions, 'Enrollment Wizard');
   }
 
   ngOnInit(): void {
-    // this.pageMetadataStore.dispatch({
-    //   type: PageMetadataActionTypes.pageTitleChanged,
-    //   payload: "Enroll New Student"
-    // });
   }
 
   saveStudent(student) {
