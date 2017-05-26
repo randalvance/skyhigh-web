@@ -4,12 +4,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 import { SharedModule } from "../shared/shared.module";
 
-import { StudentsService } from "./students.service";
-import { StudentsListComponent } from "./students-list.component";
-import { StudentEditComponent } from "./student-edit.component";
-import { StudentEditFormComponent } from "./student-edit-form.component";
-
-import { studentRouting } from "./students.routing";
+import { StudentsService, StudentsListComponent, StudentEditComponent, StudentEditFormComponent, studentRouting } from ".";
 
 @NgModule({
   imports: [

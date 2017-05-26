@@ -6,9 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreStoreModule } from './stores';
 
-import { SharedModule } from './shared/shared.module';
-import { EnrollmentModule } from './enrollment/enrollment.module';
-import { StudentsModule } from './students/students.module';
+import { SharedModule } from './shared';
+import { EnrollmentModule } from './enrollment';
+import { StudentsModule } from './students';
+import { ProfessorsModule } from './professors';
 
 import { AppComponent } from './app.component';
 import { Four04Component, WelcomeComponent } from './components';
@@ -37,6 +38,7 @@ import { appRouting } from './app.routing';
     SharedModule,
     EnrollmentModule,
     StudentsModule,
+    ProfessorsModule,
 
     appRouting
   ],

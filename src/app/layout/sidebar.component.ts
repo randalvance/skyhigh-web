@@ -1,24 +1,20 @@
-import { Component, EventEmitter, Input, Output }  from '@angular/core';
-import { EnrollmentSidebarItems } from '../enrollment/enrollment.sidebaritems';
-//import { ProfessorsSidebarItems } from '../professors/professors.sidebaritems';
-import { StudentsSidebarItems } from '../students/students.sidebaritems';
+import { Component, EventEmitter, Input, OnInit, Output }  from '@angular/core';
 import { SidebarItem } from '../shared/models';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: 'sidebar.component.html'
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
+
   @Output() private itemChanged: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
   @Output() private childItemChanged: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
   @Input() private selectedSidebarItemRoute: string;
+  @Input() private sidebarItems: SidebarItem[];
 
-  public sidebarItems = [
-    { text: 'Dashboard', icon: 'dashboard', route: '/', displayOrder: 1, isRoot: true },
-    ...EnrollmentSidebarItems,
-    //...ProfessorsSidebarItems,
-    ...StudentsSidebarItems
-  ].sort((a, b) => a.displayOrder > b.displayOrder ? 1 : a.displayOrder < b.displayOrder ? -1 : 0);
+  ngOnInit(): void {
+    this.sidebarItems.sort((a, b) => a.displayOrder > b.displayOrder ? 1 : a.displayOrder < b.displayOrder ? -1 : 0);
+  }
 
   emitItemChanged(item: SidebarItem) {
     this.itemChanged.emit(item);

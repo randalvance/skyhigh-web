@@ -3,7 +3,8 @@
 
   <app-sidebar
     (itemChanged)="changeSidebarItem($event)"
-    [selectedSidebarItemRoute]="selectedSidebarItemRoute$ | async"></app-sidebar>
+    [selectedSidebarItemRoute]="selectedSidebarItemRoute$ | async"
+    [sidebarItems]="sidebarItems"></app-sidebar>
 
   <section class="main-content">
     <section class="wrapper main-wrapper row">

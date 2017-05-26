@@ -8,6 +8,10 @@ import { getSiteName } from './stores/site';
 import { ConfigurationService } from './shared/services';
 import { SidebarItem } from './shared/models';
 
+import { EnrollmentSidebarItems } from './enrollment';
+import { ProfessorsSidebarItems } from './professors';
+import { StudentsSidebarItems } from './students';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
@@ -16,6 +20,7 @@ export class AppComponent implements OnInit {
   siteName: string;
   title$: Observable<string>;
   selectedSidebarItemRoute$: Observable<string>;
+  sidebarItems: SidebarItem[] = [ ...EnrollmentSidebarItems, ...ProfessorsSidebarItems, ...StudentsSidebarItems ];
 
   constructor(
     private store: Store<AppState>,
