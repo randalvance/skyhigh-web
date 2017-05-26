@@ -12,10 +12,6 @@ const initialState: EnrollmentState = {
 
 export function enrollmentReducer(state = initialState, action: Action): EnrollmentState {
   switch (action.type) {
-    case EnrollmentActions.ADD_STUDENT:
-      return Object.assign({}, state, { student: action.payload });
-    case EnrollmentActions.UPDATE_STUDENT:
-      //return Object.assign({}, state, { student: action.payload });
     default:
       return state;
   }
