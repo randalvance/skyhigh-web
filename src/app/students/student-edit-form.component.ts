@@ -11,20 +11,20 @@ export class StudentEditFormComponent implements OnInit {
   @Output() save = new EventEmitter<Student>();
 
   student: Student = new Student();
-  studentForm: FormGroup;
+  form: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
-    this.studentForm = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       'firstName': ['', [Validators.required]],
       'lastName': ['', [Validators.required]],
     });
   }
 
   onSave() : boolean {
-    this.student = Object.assign({}, this.student, this.studentForm.value);
+    this.student = Object.assign({}, this.student, this.form.value);
     this.save.emit(this.student);
     return false;
   }

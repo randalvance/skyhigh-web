@@ -1,8 +1,9 @@
 import { Routes, RouterModule } from '@angular/router';
-import { SubjectsListComponent } from './subjects-list.component';
+import { SubjectEditComponent, SubjectsListComponent } from '.';
 
 const routes: Routes = [
-  { path: 'subjects', component: SubjectsListComponent }
+  { path: 'subjects', component: SubjectsListComponent },
+  { path: 'subjects/new', component: SubjectEditComponent }
 ];
 
 export const subjectRouting = RouterModule.forChild(routes);

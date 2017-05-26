@@ -11,7 +11,7 @@ export class EnrollmentWizardComponent extends PageComponentBase implements OnIn
 
   @ViewChild(WizardComponent) wizard: WizardComponent;
 
-  studentAddedSubscription: Subscription;
+  subscriptions: Subscription = new Subscription();
 
   constructor(store: Store<AppState>, layoutActions: LayoutActions,
     private enrollmentActions: EnrollmentActions) {
@@ -22,14 +22,14 @@ export class EnrollmentWizardComponent extends PageComponentBase implements OnIn
   }
 
   ngOnDestroy(): void {
-    this.studentAddedSubscription.unsubscribe();
+    this.subscriptions.unsubscribe();
   }
 
   saveStudent(student) {
     this.store.dispatch(this.enrollmentActions.addStudent(student));
 
-    this.studentAddedSubscription = this.store.select(getEnrollmentStudent).subscribe(student => {
+    this.subscriptions.add(this.store.select(getEnrollmentStudent).subscribe(student => {
       this.wizard.next();
-    });
+    }));
   }
 }

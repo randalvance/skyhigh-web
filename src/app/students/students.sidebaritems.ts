@@ -4,7 +4,7 @@ export const StudentsSidebarItems: SidebarItem[] = [
   {
       text: "Students",
       route: "students",
-      icon: "user",
+      icon: "user-circle",
       displayOrder: 300,
       children: [
         { text: "All Students", route: "students" },

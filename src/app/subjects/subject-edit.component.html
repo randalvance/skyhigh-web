@@ -1,0 +1,13 @@
+<app-box>
+  <form (ngSubmit)="onSave()" [formGroup]="form">
+  <div class="col-12 col-sm-9 col-md-8">
+
+    <app-text-input name="name" label="Name" placeholder="Please enter the name" formControlName="name" required></app-text-input>
+
+    <app-text-input name="description" label="Description" placeholder="Please enter the description" formControlName="description" required></app-text-input>
+
+  </div>
+  <input type="submit" class="btn btn-primary" value="Save" />
+</form>
+
+</app-box>
