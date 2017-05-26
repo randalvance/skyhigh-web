@@ -8,11 +8,11 @@ import { SidebarItem } from "../shared/models";
   templateUrl: "sidebar-item.component.html"
 })
 export class SidebarItemComponent implements OnInit {
-  @Input() private item: SidebarItem;
-  @Output() private itemClicked: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
-  @Output() private childItemClicked: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
+  @Input() item: SidebarItem;
+  @Output() itemClicked: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
+  @Output() childItemClicked: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
 
-  @Input() private isOpen: boolean = false;
+  @Input() isOpen: boolean = false;
 
   constructor() {
   }

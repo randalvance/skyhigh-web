@@ -8,7 +8,7 @@ import { WizardStepComponent } from "./wizard-step.component";
 })
 export class WizardComponent implements AfterContentInit, OnInit {
 
-  @ContentChildren(WizardStepComponent) private wizardSteps: QueryList<WizardStepComponent>;
+  @ContentChildren(WizardStepComponent) wizardSteps: QueryList<WizardStepComponent>;
 
   private _currentStep: number;
   private _wizardStepsArray: Array<WizardStepComponent>;

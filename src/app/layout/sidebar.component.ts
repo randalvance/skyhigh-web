@@ -7,10 +7,10 @@ import { SidebarItem } from '../shared/models';
 })
 export class SidebarComponent implements OnInit {
 
-  @Output() private itemChanged: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
-  @Output() private childItemChanged: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
-  @Input() private selectedSidebarItemRoute: string;
-  @Input() private sidebarItems: SidebarItem[];
+  @Output() itemChanged: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
+  @Output() childItemChanged: EventEmitter<SidebarItem> = new EventEmitter<SidebarItem>();
+  @Input() selectedSidebarItemRoute: string;
+  @Input() sidebarItems: SidebarItem[];
 
   ngOnInit(): void {
     this.sidebarItems.sort((a, b) => a.displayOrder > b.displayOrder ? 1 : a.displayOrder < b.displayOrder ? -1 : 0);
