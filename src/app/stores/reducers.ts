@@ -8,13 +8,15 @@ import { LayoutState, LayoutActions, layoutReducer } from './layout';
 import { SiteState, SiteActions, siteReducer } from './site';
 import { EnrollmentState, EnrollmentActions, enrollmentReducer } from './enrollment';
 import { StudentState, StudentActions, studentReducer } from './student';
+import { SubjectState, SubjectActions, subjectReducer } from './subject';
 
 export interface AppState {
   router: RouterState
   layout: LayoutState,
   site: SiteState,
   enrollment: EnrollmentState,
-  student: StudentState
+  student: StudentState,
+  subject: SubjectState
 }
 
 // It is important that the key of reducer here matches the key of store in the AppState for each reducer
@@ -23,14 +25,16 @@ export const AppReducers = {
   layout: layoutReducer,
   site: siteReducer,
   enrollment: enrollmentReducer,
-  student: studentReducer
+  student: studentReducer,
+  subject: subjectReducer
 };
 
 export const AppActions = [
   LayoutActions,
   SiteActions,
   EnrollmentActions,
-  StudentActions
+  StudentActions,
+  SubjectActions
 ]
 
 const developmentReducer: ActionReducer<AppState> = compose(storeFreeze, combineReducers)(AppReducers);

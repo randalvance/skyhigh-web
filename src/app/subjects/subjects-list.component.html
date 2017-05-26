@@ -1,0 +1,12 @@
+<app-box>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+    <tr *ngFor="let subject of subjects$ | async">
+      <td>{{subject.name}}</td>
+      <td>{{subject.description}}</td>
+    </tr>
+  </table>
+</app-box>

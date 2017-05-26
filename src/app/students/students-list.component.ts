@@ -16,24 +16,24 @@ export class StudentsListComponent extends PageComponentBase implements OnInit, 
 
   students$: Observable<Student[]>;
 
-  studentsGetAllSubscription: Subscription;
+  subscriptions: Subscription = new Subscription();
 
   constructor(store: Store<AppState>, layoutActions: LayoutActions,
     private studentActions: StudentActions,
     private studentsService: StudentsService) {
-    super(store, layoutActions, 'STUDENTS');
+    super(store, layoutActions, 'Students');
   }
 
   ngOnInit(): void {
-    this.studentsGetAllSubscription = this.studentsService.getAll().subscribe(students => {
+    this.subscriptions.add(this.studentsService.getAll().subscribe(students => {
       this.store.dispatch(this.studentActions.replaceStudents(students));
-    });
+    }));
 
     this.students$ = this.store.select(getStudents);
   }
 
   ngOnDestroy(): void {
-    this.studentsGetAllSubscription.unsubscribe();
+    this.subscriptions.unsubscribe();
   }
 
 }

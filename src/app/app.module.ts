@@ -10,6 +10,7 @@ import { SharedModule } from './shared';
 import { EnrollmentModule } from './enrollment';
 import { StudentsModule } from './students';
 import { ProfessorsModule } from './professors';
+import { SubjectsModule } from './subjects';
 
 import { AppComponent } from './app.component';
 import { Four04Component, WelcomeComponent } from './components';
@@ -39,6 +40,7 @@ import { appRouting } from './app.routing';
     EnrollmentModule,
     StudentsModule,
     ProfessorsModule,
+    SubjectsModule,
 
     appRouting
   ],

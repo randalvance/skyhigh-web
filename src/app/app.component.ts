@@ -11,6 +11,7 @@ import { SidebarItem } from './shared/models';
 import { EnrollmentSidebarItems } from './enrollment';
 import { ProfessorsSidebarItems } from './professors';
 import { StudentsSidebarItems } from './students';
+import { SubjectsSidebarItems } from './subjects';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ export class AppComponent implements OnInit {
   siteName: string;
   title$: Observable<string>;
   selectedSidebarItemRoute$: Observable<string>;
-  sidebarItems: SidebarItem[] = [ ...EnrollmentSidebarItems, ...ProfessorsSidebarItems, ...StudentsSidebarItems ];
+  sidebarItems: SidebarItem[] = [ ...EnrollmentSidebarItems, ...ProfessorsSidebarItems, ...StudentsSidebarItems, ...SubjectsSidebarItems ];
 
   constructor(
     private store: Store<AppState>,
