@@ -8,7 +8,7 @@ import { Student } from './student';
 })
 export class StudentEditFormComponent implements OnInit {
 
-  //@Output() save = new EventEmitter<Student>();
+  @Output() save = new EventEmitter<Student>();
 
   student: Student = new Student();
   studentForm: FormGroup;
@@ -24,8 +24,8 @@ export class StudentEditFormComponent implements OnInit {
   }
 
   onSave() : boolean {
-    // this.student = Object.assign({}, this.student, this.studentForm.value);
-    // this.save.emit(this.student);
+    this.student = Object.assign({}, this.student, this.studentForm.value);
+    this.save.emit(this.student);
     return false;
   }
 }

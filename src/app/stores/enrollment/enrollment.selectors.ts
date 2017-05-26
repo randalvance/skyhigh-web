@@ -5,4 +5,4 @@ import { AppState } from '../reducers';
 export const getEnrollmentState = (state: AppState) => {
   return state.enrollment;
 }
-export const getStudent = createSelector(getEnrollmentState, state => state.student);
+export const getEnrollmentStudent = createSelector(getEnrollmentState, state => state.student);

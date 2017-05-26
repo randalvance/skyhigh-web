@@ -1,13 +1,13 @@
-import { SidebarItem } from "../shared/models";
+import { SidebarItem } from '../shared/models';
 
 export const EnrollmentSidebarItems: SidebarItem[] = [
   {
-      text: "Enrollment",
-      route: "enrollment",
-      icon: "users",
+      text: 'Enrollment',
+      route: 'enrollment',
+      icon: 'users',
       displayOrder: 100,
       children: [
-        { text: "Enroll New Student", route: "enrollment" }
+        { text: 'Enroll New Student', route: 'enrollment' }
       ]
   }
 ];

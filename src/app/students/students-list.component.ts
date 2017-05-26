@@ -3,7 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
 import { ChildComponentMetadata } from '../shared/models';
-import { AppState, StudentActions, getStudents } from '../stores';
+import { AppState, LayoutActions, StudentActions, getStudents } from '../stores';
+import { PageComponentBase } from '../shared';
 
 import { Student } from '.';
 import { StudentsService } from './students.service';
@@ -11,17 +12,16 @@ import { StudentsService } from './students.service';
 @Component({
   templateUrl: 'students-list.component.html'
 })
-export class StudentsListComponent implements OnInit, OnDestroy {
+export class StudentsListComponent extends PageComponentBase implements OnInit, OnDestroy {
 
   students$: Observable<Student[]>;
 
   studentsGetAllSubscription: Subscription;
 
-  constructor(
-    private store : Store<AppState>,
+  constructor(store: Store<AppState>, layoutActions: LayoutActions,
     private studentActions: StudentActions,
     private studentsService: StudentsService) {
-
+    super(store, layoutActions, 'STUDENTS');
   }
 
   ngOnInit(): void {

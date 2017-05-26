@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { Router, NavigationEnd } from "@angular/router";
-import { SidebarItem } from "../shared/models";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { SidebarItem } from '../shared/models';
 
 @Component({
   moduleId: module.id,
-  selector: "app-sidebar-item",
-  templateUrl: "sidebar-item.component.html"
+  selector: 'app-sidebar-item',
+  templateUrl: 'sidebar-item.component.html'
 })
 export class SidebarItemComponent implements OnInit {
   @Input() item: SidebarItem;

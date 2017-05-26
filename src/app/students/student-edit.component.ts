@@ -1,25 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { AppState, EnrollmentActions, LayoutActions } from '../stores';
+import { PageComponentBase } from '../shared';
 import { Student } from './student';
 
 @Component({
-  selector: 'app-student-edit',
   templateUrl: 'student-edit.component.html'
 })
-export class StudentEditComponent implements OnInit {
+export class StudentEditComponent extends PageComponentBase implements OnInit {
 
-  private title: string = 'Add Student';
-  private student: Student = new Student();
+  student: Student = new Student();
 
-  constructor() {
+  constructor(store: Store<AppState>, layoutActions: LayoutActions,
+    private enrollmentActions: EnrollmentActions) {
 
+    super(store, layoutActions, 'Add Student');
   }
 
   ngOnInit(): void {
-    // this.store.dispatch({
-    //   type: PageMetadataActionTypes.pageTitleChanged,
-    //   payload: 'Add Student'
-    // });
+
   }
 
   saveStudent(student: Student) {

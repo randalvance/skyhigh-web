@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
-import { Http, Response } from "@angular/http";
-import { Observable, ObservableInput } from "rxjs/Observable";
-import { Professor } from "./professor";
+import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Observable, ObservableInput } from 'rxjs/Observable';
+import { Professor } from './professor';
 
 import 'rxjs/add/observable/of';
 
 @Injectable()
 export class ProfessorsService {
-  private serviceUrl: string = "http://localhost:5000/api/professors";
+  private serviceUrl: string = 'http://localhost:5000/api/professors';
 
   constructor(private http: Http) {
 
@@ -26,7 +26,7 @@ export class ProfessorsService {
     //             .map((response: Response) => <Professor[]>response.json())
     //             .do(data => console.log(`All: ${JSON.stringify(data)}`))
     //             .catch((err, caught) => {
-    //               return Observable.throw(err || "An error occured");
+    //               return Observable.throw(err || 'An error occured');
     //             });
 
   }

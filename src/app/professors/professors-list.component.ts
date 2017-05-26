@@ -1,15 +1,15 @@
-import { Component, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { Observable } from "rxjs/Observable";
-import { ChildComponentMetadata } from "../shared/models";
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+import { ChildComponentMetadata } from '../shared/models';
 import { PageComponentBase } from '../shared/components';
-import { AppState, LayoutActions } from "../stores";
+import { AppState, LayoutActions } from '../stores';
 
-import { Professor } from "./professor";
-import { ProfessorsService } from "./professors.service";
+import { Professor } from './professor';
+import { ProfessorsService } from './professors.service';
 
 @Component({
-  templateUrl: "professors-list.component.html"
+  templateUrl: 'professors-list.component.html'
 })
 export class ProfessorsListComponent extends PageComponentBase implements OnInit {
 
@@ -17,7 +17,7 @@ export class ProfessorsListComponent extends PageComponentBase implements OnInit
 
   constructor(store: Store<AppState>, layoutActions: LayoutActions,
     private professorsService: ProfessorsService) {
-    super(store, layoutActions, 'Professors List Screen');
+    super(store, layoutActions, 'Professors');
   }
 
   ngOnInit(): void {
