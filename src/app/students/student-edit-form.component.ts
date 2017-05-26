@@ -10,8 +10,8 @@ export class StudentEditFormComponent implements OnInit {
 
   @Output() save = new EventEmitter<Student>();
 
-  private student: Student = new Student();
-  private studentForm: FormGroup;
+  student: Student = new Student();
+  studentForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
   }
