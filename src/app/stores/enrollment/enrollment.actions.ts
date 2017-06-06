@@ -6,11 +6,11 @@ import { ActionCreatorFactory } from 'ngrx-action-creator-factory';
 
 @Injectable()
 export class EnrollmentActions {
-  static ADD_STUDENT = "[Enrollment] ADD_STUDENT";
+  static SET_STUDENT_TO_ENROLL = "[Enrollment] SET_STUDENT_TO_ENROLL";
 
-  addStudent = (student: Student): Action => {
+  setStudentToEnroll = (student: Student): Action => {
     return {
-      type: EnrollmentActions.ADD_STUDENT,
+      type: EnrollmentActions.SET_STUDENT_TO_ENROLL,
       payload: student
     };
   };

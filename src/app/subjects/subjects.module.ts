@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 import { SharedModule } from "../shared/shared.module";
 
-import { SubjectEditComponent, SubjectsListComponent } from ".";
+import { SubjectEditComponent, SubjectsListComponent, SubjectSelectionComponent } from ".";
 import { subjectRouting } from './subjects.routing';
 import { SubjectsService } from './subjects.service';
 
@@ -18,11 +18,12 @@ import { SubjectsService } from './subjects.service';
     SharedModule
   ],
   exports: [
-
+    SubjectSelectionComponent
   ],
   declarations: [
     SubjectEditComponent,
-    SubjectsListComponent
+    SubjectsListComponent,
+    SubjectSelectionComponent
   ],
   providers: [
     SubjectsService

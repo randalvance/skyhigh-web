@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { SharedModule } from '../shared/shared.module';
 import { StudentsModule }  from '../students/students.module';
-//import { SubjectsModule  } from '../subjects/subjects.module';
+import { SubjectsModule  } from '../subjects/subjects.module';
 
 import { EnrollmentWizardComponent } from './enrollment-wizard.component';
 
@@ -16,7 +16,7 @@ import { enrollmentRouting } from './enrollment.routing';
     FormsModule,
     HttpModule,
     SharedModule,
-    //SubjectsModule,
+    SubjectsModule,
     enrollmentRouting,
 
     StudentsModule

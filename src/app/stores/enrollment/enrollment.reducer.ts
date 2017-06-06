@@ -7,12 +7,12 @@ export interface EnrollmentState {
 }
 
 const initialState: EnrollmentState = {
-  student: new Student()
+  student: null
 };
 
 export function enrollmentReducer(state = initialState, action: Action): EnrollmentState {
   switch (action.type) {
-    case EnrollmentActions.ADD_STUDENT:
+    case EnrollmentActions.SET_STUDENT_TO_ENROLL:
       return Object.assign({}, state, { student: action.payload });
     default:
       return state;
