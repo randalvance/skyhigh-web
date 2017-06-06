@@ -15,11 +15,6 @@ export class SubjectsService extends ResourceServiceBase<Subject> {
   constructor(http: Http,
     private store: Store<AppState>,
     private subjectActions: SubjectActions) {
-    super(http, 'http://localhost:5000/api/', 'subjects');
-  }
-
-  public getAll(): Observable<Subject[]> {
-    // Mock
-    return this.store.select(getSubjects);
+    super(http, 'http://localhost:5001/api/', 'subjects');
   }
 }

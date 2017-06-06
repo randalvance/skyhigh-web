@@ -1,5 +1,5 @@
 <app-box>
-  <form (ngSubmit)="onSave()" [formGroup]="form">
+  <form #subjectForm (ngSubmit)="saveSubject()" [formGroup]="form">
   <div class="col-12 col-sm-9 col-md-8">
 
     <app-text-input name="name" label="Name" placeholder="Please enter the name" formControlName="name" required></app-text-input>
