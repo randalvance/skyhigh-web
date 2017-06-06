@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState, StudentActions, LayoutActions } from '../stores';
 import { PageComponentBase } from '../shared';
@@ -14,7 +15,8 @@ export class StudentEditComponent extends PageComponentBase implements OnInit {
 
   constructor(store: Store<AppState>, layoutActions: LayoutActions,
     private studentActions: StudentActions,
-    private studentsService: StudentsService) {
+    private studentsService: StudentsService,
+    private router: Router) {
 
     super(store, layoutActions, 'Add Student');
   }
@@ -25,7 +27,7 @@ export class StudentEditComponent extends PageComponentBase implements OnInit {
 
   saveStudent(student: Student) {
     this.studentsService.add(student).subscribe(resp => {
-      alert('Done saving student');
+      this.router.navigateByUrl('/students');
     });
   }
 }
