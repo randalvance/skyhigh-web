@@ -9,19 +9,6 @@ import 'rxjs/add/observable/of';
 @Injectable()
 export class StudentsService extends ResourceServiceBase<Student> {
   constructor(http: Http) {
-    super(http, 'students');
-  }
-
-  // Mock
-  public getAll(): Observable<Student[]> {
-    let students: Student[] = [
-      {
-        studentId: 1,
-        firstName: 'John',
-        lastName: 'Smith'
-      }
-    ];
-
-    return Observable.of<Student[]>(students);
+    super(http, 'http://localhost:5000/api/', 'students');
   }
 }

@@ -7,13 +7,24 @@ export interface SubjectState {
 }
 
 const initialState: SubjectState = {
-  subjects: []
+  subjects: [
+    {
+      subjectID: 1,
+      name: 'Basics of Breathing',
+      description: 'Learn how to breath by the end of this course.'
+    },
+    {
+      subjectID: 2,
+      name: 'Mastering Ninjutsu Techniques',
+      description: 'Master different ninjutsu techniques.'
+    }
+  ]
 };
 
 export function subjectReducer(state = initialState, action: Action): SubjectState {
   switch (action.type) {
     case SubjectActions.ADD_SUBJECT:
-      return Object.assign({}, state, { subjects: [ action.payload ] });
+      return Object.assign({}, state, { subjects: state.subjects.concat([ action.payload ]) });
     default:
       return state;
   };

@@ -6,12 +6,13 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/do";
 import "rxjs/add/operator/catch";
 
+import "rxjs/add/observable/throw";
+
 export abstract class ResourceServiceBase<T> {
 
-    private apiBaseUrl: string = "http://localhost:5000/api/";
     protected resourceUrl: string;
 
-    constructor(private http: Http, private resource: string) {
+    constructor(private http: Http, private apiBaseUrl, private resource: string) {
         this.resourceUrl = this.apiBaseUrl + (resource.startsWith("/") ? resource.substr(1) : resource);
     }
 
@@ -28,5 +29,10 @@ export abstract class ResourceServiceBase<T> {
         return this.http.post(this.resourceUrl, JSON.stringify(entity), {
             headers: new Headers({ "Content-Type": "application/json" })
         });
+    }
+
+    public delete(id) : Observable<Response> {
+      var sanitizedId = encodeURIComponent(id);
+      return this.http.delete(this.resourceUrl + `/${sanitizedId}`);
     }
 }

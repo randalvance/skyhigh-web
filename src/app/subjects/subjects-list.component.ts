@@ -25,13 +25,7 @@ export class SubjectsListComponent extends PageComponentBase implements OnInit, 
   }
 
   ngOnInit(): void {
-    this.subscriptions.add(
-      this.subjectsService.getAll().subscribe(subjects => {
-        this.store.dispatch(this.subjectActions.addSubject(subjects[0])); // TODO: we'll fix this later
-      })
-    );
-
-    this.subjects$ = this.store.select(getSubjects);
+    this.subjects$ = this.subjectsService.getAll();
   }
 
   ngOnDestroy(): void {

@@ -1,27 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { Store } from '@ngrx/store';
 import { ResourceServiceBase } from '../shared/services';
 import { Subject } from './subject';
 import { Observable, ObservableInput } from 'rxjs/Observable';
 
 import 'rxjs/add/observable/of';
 
+// Remove once we connect it to the real web service
+import { AppState, SubjectActions, getSubjects } from '../stores';
+
 @Injectable()
 export class SubjectsService extends ResourceServiceBase<Subject> {
-  constructor(http: Http) {
-    super(http, 'subjects');
+  constructor(http: Http,
+    private store: Store<AppState>,
+    private subjectActions: SubjectActions) {
+    super(http, 'http://localhost:5000/api/', 'subjects');
   }
 
-  // Mock
   public getAll(): Observable<Subject[]> {
-    let subjects: Subject[] = [
-      {
-        subjectID: 1,
-        name: 'Math',
-        description: 'Test your base intelligence.'
-      }
-    ];
-
-    return Observable.of<Subject[]>(subjects);
+    // Mock
+    return this.store.select(getSubjects);
   }
 }
