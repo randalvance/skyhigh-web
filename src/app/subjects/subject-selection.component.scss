@@ -1,0 +1,21 @@
+.subject-selection-container {
+  min-height: 300px;
+}
+
+.left-pane {
+}
+
+.right-pane {
+  background-color: silver;
+}
+
+.subject-card {
+  margin: 5px;
+  width: 20rem;
+  float: left;
+
+  &:hover {
+    background-color: darken(#fff, 10%);
+    cursor: pointer;
+  }
+}

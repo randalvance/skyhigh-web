@@ -26,7 +26,6 @@ export abstract class ResourceServiceBase<T> {
     }
 
     public add(entity: T): Observable<Response> {
-      console.log(this.resourceUrl);
         return this.http.post(this.resourceUrl, JSON.stringify(entity), {
             headers: new Headers({ "Content-Type": "application/json" })
         });
