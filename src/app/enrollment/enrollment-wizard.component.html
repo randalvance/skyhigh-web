@@ -7,7 +7,9 @@
     </app-wizard-step>
     <app-wizard-step [title]="'Select Subjects'">
       <app-box>
-        <app-subject-selection (subjectSelected)="selectSubject($event)" [selectedSubjects]="selectedSubjects$ | async"></app-subject-selection>
+        <app-subject-selection [selectedSubjects]="selectedSubjects$ | async"
+          (subjectSelected)="selectSubject($event)"
+          (subjectRemoved)="removeSubject($event)"></app-subject-selection>
       </app-box>
     </app-wizard-step>
     <app-wizard-step [title]="'Select Section'">

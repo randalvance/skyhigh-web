@@ -9,6 +9,7 @@ import { ActionCreatorFactory } from 'ngrx-action-creator-factory';
 export class EnrollmentActions {
   static SET_STUDENT_TO_ENROLL = '[Enrollment] SET_STUDENT_TO_ENROLL';
   static SELECT_SUBJECT = '[Enrollment] SELECT_SUBJECT';
+  static REMOVE_SUBJECT = '[Enrollment] REMOVE_SUBJECT';
 
   setStudentToEnroll = (student: Student): Action => {
     return {
@@ -21,6 +22,13 @@ export class EnrollmentActions {
     return {
       type: EnrollmentActions.SELECT_SUBJECT,
       payload: subject
-    }
+    };
+  }
+
+  removeSubject = (subject: Subject): Action => {
+    return {
+      type: EnrollmentActions.REMOVE_SUBJECT,
+      payload: subject
+    };
   }
 }

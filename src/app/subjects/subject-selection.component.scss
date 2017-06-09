@@ -3,17 +3,22 @@
 }
 
 .left-pane {
+  .row {
+    padding: 10px;
+  }
 }
 
 .right-pane {
-  background-color: silver;
+  .selected-subjects-container {
+    background-color: silver;
+    min-height: 300px;
+  }
+  .row {
+    padding: 10px 30px;
+  }
 }
 
 .subject-card {
-  margin: 5px;
-  width: 20rem;
-  float: left;
-
   &:hover {
     background-color: darken(#fff, 10%);
     cursor: pointer;

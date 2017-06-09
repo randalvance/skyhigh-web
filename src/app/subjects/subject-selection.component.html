@@ -1,24 +1,28 @@
 <div class="row subject-selection-container">
 
   <div class="col-6 left-pane">
-      <div class="card col-6 subject-card" *ngFor="let subject of subjects$ | async" (click)="selectSubject(subject)">
+    <h2>Available Subjects</h2>
+    <div class="row">
+      <div class="card col-12 subject-card" *ngFor="let subject of subjects$ | async" (click)="selectSubject(subject)">
         <div class="card-block">
           <h4 class="card-title">{{subject.name}}</h4>
           <p class="card-text">{{subject.description}}</p>
         </div>
       </div>
+    </div>
   </div>
 
   <div class="col-6 right-pane">
-
-    <div class="col-6 left-pane">
-      <div class="card col-6 subject-card" *ngFor="let subject of selectedSubjects" (click)="selectSubject(subject)">
-        <div class="card-block">
-          <h4 class="card-title">{{subject.name}}</h4>
-          <p class="card-text">{{subject.description}}</p>
+    <h2>Selected Subjects</h2>
+    <div class="selected-subjects-container">
+      <div class="row">
+        <div class="card col-12 subject-card" *ngFor="let subject of selectedSubjects" (click)="removeSubject(subject)">
+          <div class="card-block">
+            <h4 class="card-title">{{subject.name}}</h4>
+            <p class="card-text">{{subject.description}}</p>
+          </div>
         </div>
       </div>
-  </div>
-
+    </div>
   </div>
 </div>

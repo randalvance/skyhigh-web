@@ -18,9 +18,11 @@ export function enrollmentReducer(state = initialState, action: Action): Enrollm
     case EnrollmentActions.SET_STUDENT_TO_ENROLL:
       return Object.assign({}, state, { student: action.payload });
     case EnrollmentActions.SELECT_SUBJECT:
-      console.log(JSON.stringify(state.selectedSubjects));
-      return Object.assign({}, state, { selectedSubjects: state.selectedSubjects.concat([ action.payload ])});
+      return Object.assign({}, state, { selectedSubjects: state.selectedSubjects.concat([action.payload]) });
+    case EnrollmentActions.REMOVE_SUBJECT:
+      return Object.assign({}, state, { selectedSubjects: state.selectedSubjects.filter(x => x.subjectId !== action.payload.subjectId) });
     default:
       return state;
   }
 }
+

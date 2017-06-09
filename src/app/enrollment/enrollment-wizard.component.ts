@@ -59,4 +59,8 @@ export class EnrollmentWizardComponent extends PageComponentBase implements OnIn
   selectSubject(subject: Subject) {
     this.store.dispatch(this.enrollmentActions.selectSubject(subject));
   }
+
+  removeSubject(subject: Subject) {
+    this.store.dispatch(this.enrollmentActions.removeSubject(subject));
+  }
 }

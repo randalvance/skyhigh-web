@@ -16,10 +16,10 @@ export class SubjectActions {
     };
   };
 
-  removeSubject = (subjectID: number): Action => {
+  removeSubject = (subjectId: number): Action => {
     return {
       type: SubjectActions.REMOVE_SUBJECT,
-      payload: subjectID
+      payload: subjectId
     };
   };
 }
