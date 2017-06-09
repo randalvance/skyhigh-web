@@ -45,7 +45,6 @@ export class EnrollmentWizardComponent extends PageComponentBase implements OnIn
     this.store.dispatch(this.enrollmentActions.setStudentToEnroll(null));
   }
 
-
   ngOnDestroy(): void {
     // Proper way of unsubscribing
     // See SO post: https://stackoverflow.com/a/41177163
@@ -63,5 +62,9 @@ export class EnrollmentWizardComponent extends PageComponentBase implements OnIn
 
   removeSubject(subject: Subject) {
     this.store.dispatch(this.enrollmentActions.removeSubject(subject));
+  }
+
+  proceedToSummary() {
+    this.wizard.next();
   }
 }

@@ -1,9 +1,10 @@
-import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, OnInit, OnDestroy, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject as RxSubject } from 'rxjs/Subject';
 import { Subject } from './subject';
 import { SubjectsService } from './subjects.service';
 
+import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/merge';
@@ -21,9 +22,10 @@ export class SubjectSelectionComponent implements OnInit, OnDestroy {
   @Output() subjectSelected: EventEmitter<Subject> = new EventEmitter<Subject>();
   @Output() subjectRemoved: EventEmitter<Subject> = new EventEmitter<Subject>();
   @Output() selectedSubjectsFiltered: EventEmitter<string> = new EventEmitter<string>();
+  @Output() nextClicked: EventEmitter<{}> = new EventEmitter();
 
   @ViewChild('availableSubjectsFilter') availableSubjectsFilter: ElementRef;
-  
+
   selectedSubjectsFilter: string = '';
 
   subjects$: Observable<Subject[]>;
@@ -41,13 +43,13 @@ export class SubjectSelectionComponent implements OnInit, OnDestroy {
     this.setupObservablesForLoadingSubjects();
 
     Observable.fromEvent(this.availableSubjectsFilter.nativeElement, 'keyup')
-    .debounceTime(1000)
-    .takeUntil(this.ngUnsubscribe)
-    .subscribe((keyboardEvent: any) => {
-      let searchKey = keyboardEvent.target.value;
+      .debounceTime(1000)
+      .takeUntil(this.ngUnsubscribe)
+      .subscribe((keyboardEvent: any) => {
+        let searchKey = keyboardEvent.target.value;
 
-      this.setupObservablesForLoadingSubjects(searchKey);
-    });
+        this.setupObservablesForLoadingSubjects(searchKey);
+      });
   }
 
   ngOnDestroy(): void {
@@ -59,7 +61,7 @@ export class SubjectSelectionComponent implements OnInit, OnDestroy {
 
   setupObservablesForLoadingSubjects(searchTerm?: string) {
     this.loading = true;
-    
+
     let initialSubjects = this.subjectsService.getAll({ searchTerm: searchTerm }).map(subjects => {
       return subjects.filter(subject => this.selectedSubjects.map(x => x.subjectId).indexOf(subject.subjectId) === -1)
     });
@@ -78,13 +80,9 @@ export class SubjectSelectionComponent implements OnInit, OnDestroy {
       }
 
       return subjects;
+    }).do(() => {
+      this.loading = false;
     });
-
-    this.subjects$
-      .takeUntil(this.ngUnsubscribe)
-      .subscribe(subjects => {
-        this.loading = false;
-      });
   }
 
   selectSubject(subject: Subject): void {
@@ -99,6 +97,10 @@ export class SubjectSelectionComponent implements OnInit, OnDestroy {
 
   filterSelectedSubjects(filter: string) {
     this.selectedSubjectsFiltered.emit(filter);
+  }
+
+  clickNext() {
+    this.nextClicked.emit();
   }
 }
 

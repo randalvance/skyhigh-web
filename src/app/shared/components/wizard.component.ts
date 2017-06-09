@@ -67,7 +67,7 @@ export class WizardComponent implements AfterContentInit, OnInit {
   }
 
   next() {
-    if (this.currentStep < this.wizardSteps.length - 1) {
+    if (this.currentStep < this.wizardSteps.length) {
       this.currentStep++;
       if (this.currentIndex > this.maxIndexVisited) {
         this.maxIndexVisited++;

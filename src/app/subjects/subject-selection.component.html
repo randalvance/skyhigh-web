@@ -39,8 +39,8 @@
       </div>
     </div>
   </div>
-  
+
   <div class="btn-group actions-container">
-      <button type="submit" class="btn btn-primary" [disabled]="selectedSubjects.length === 0">Next</button>
+      <button type="button" class="btn btn-primary" (click)="clickNext()" [disabled]="selectedSubjects.length === 0">Next</button>
   </div>
 </div>
