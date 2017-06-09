@@ -2,18 +2,31 @@
 
   <div class="col-6 left-pane">
     <h2>Available Subjects</h2>
-    <div class="row">
-      <div class="card col-12 subject-card" *ngFor="let subject of subjects$ | async" (click)="selectSubject(subject)">
-        <div class="card-block">
-          <h4 class="card-title">{{subject.name}}</h4>
-          <p class="card-text">{{subject.description}}</p>
+
+    <div class="form-group">
+      <input type="text" class="form-control" #availableSubjectsFilter placeholder="Search Subjects..." />
+    </div>
+
+    <div class="available-subjects-container">
+      <div class="row" [hidden]="loading">
+        <div class="card col-12 subject-card" *ngFor="let subject of subjects$ | async" (click)="selectSubject(subject)">
+          <div class="card-block">
+            <h4 class="card-title">{{subject.name}}</h4>
+            <p class="card-text">{{subject.description}}</p>
+          </div>
         </div>
       </div>
+      <app-loader [hidden]="!loading"></app-loader>
     </div>
   </div>
 
   <div class="col-6 right-pane">
     <h2>Selected Subjects</h2>
+
+    <div class="form-group">
+      <input type="text" class="form-control" #selectedSubjectsFilter placeholder="Search Subjects..." />
+    </div>
+
     <div class="selected-subjects-container">
       <div class="row">
         <div class="card col-12 subject-card" *ngFor="let subject of selectedSubjects" (click)="removeSubject(subject)">

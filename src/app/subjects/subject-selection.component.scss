@@ -3,15 +3,22 @@
 }
 
 .left-pane {
+  .available-subjects-container {
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
   .row {
-    padding: 10px;
+    padding: 10px 30px;
   }
 }
 
 .right-pane {
   .selected-subjects-container {
     background-color: silver;
-    min-height: 300px;
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
   .row {
     padding: 10px 30px;
