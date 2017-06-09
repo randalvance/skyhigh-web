@@ -1,19 +1,23 @@
 .subject-selection-container {
-  min-height: 300px;
+  padding: 10px;
 }
 
 .left-pane {
+  padding: 10px 10px 10px 0;
+
   .available-subjects-container {
     height: 400px;
     overflow-x: hidden;
     overflow-y: scroll;
   }
   .row {
-    padding: 10px 30px;
+    padding: 10px 20px;
   }
 }
 
 .right-pane {
+  padding: 10px 0 10px 10px;
+
   .selected-subjects-container {
     background-color: silver;
     height: 400px;
@@ -21,7 +25,7 @@
     overflow-y: scroll;
   }
   .row {
-    padding: 10px 30px;
+    padding: 10px 20px;
   }
 }
 

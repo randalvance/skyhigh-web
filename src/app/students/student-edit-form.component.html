@@ -3,8 +3,11 @@
 
     <app-text-input name="lastName" label="Last Name" placeholder="Please enter the last name" formControlName="lastName" required></app-text-input>
 
-    <app-text-input name="firstName" label="First Name" placeholder="Please enter the first name" formControlName="firstName" required></app-text-input>
+    <app-text-input name="firstName" label="First Name" placeholder="Please enter the first name" formControlName="firstName"
+      required></app-text-input>
 
+    <div class="btn-group actions-container">
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">{{saveButtonText}}</button>
+    </div>
   </div>
-  <input type="submit" class="btn btn-primary" value="Save" />
 </form>

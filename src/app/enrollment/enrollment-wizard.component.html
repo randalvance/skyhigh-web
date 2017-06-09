@@ -2,7 +2,7 @@
   <app-wizard>
     <app-wizard-step [title]="'Create New Student'">
       <app-box>
-        <app-student-edit-form (save)="saveStudent($event)"></app-student-edit-form>
+        <app-student-edit-form (save)="saveStudent($event)" saveButtonText="Next"></app-student-edit-form>
       </app-box>
     </app-wizard-step>
     <app-wizard-step [title]="'Select Subjects'">

@@ -1,13 +1,14 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Student } from './student';
 
 @Component({
   selector: 'app-student-edit-form',
-  templateUrl: 'student-edit-form.component.html'
+  templateUrl: 'student-edit-form.component.html',
+  styleUrls: [ 'student-edit-form.component.scss' ]
 })
 export class StudentEditFormComponent implements OnInit {
-
+  @Input() saveButtonText: string;
   @Output() save = new EventEmitter<Student>();
 
   student: Student = new Student();
