@@ -8,6 +8,8 @@ import { SubjectEditComponent, SubjectsListComponent, SubjectSelectionComponent 
 import { subjectRouting } from './subjects.routing';
 import { SubjectsService } from './subjects.service';
 
+import { SubjectFilterPipe } from './subject-filter.pipe';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { SubjectsService } from './subjects.service';
   declarations: [
     SubjectEditComponent,
     SubjectsListComponent,
-    SubjectSelectionComponent
+    SubjectSelectionComponent,
+    SubjectFilterPipe
   ],
   providers: [
     SubjectsService

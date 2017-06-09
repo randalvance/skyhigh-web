@@ -24,12 +24,13 @@
     <h2>Selected Subjects</h2>
 
     <div class="form-group">
-      <input type="text" class="form-control" #selectedSubjectsFilter placeholder="Search Subjects..." />
+      <input type="text" class="form-control" [(ngModel)]="selectedSubjectsFilter" placeholder="Search Subjects..." />
     </div>
 
     <div class="selected-subjects-container">
       <div class="row">
-        <div class="card col-12 subject-card" *ngFor="let subject of selectedSubjects" (click)="removeSubject(subject)">
+        <div class="card col-12 subject-card" *ngFor="let subject of selectedSubjects | subjectFilter:selectedSubjectsFilter" 
+        (click)="removeSubject(subject)">
           <div class="card-block">
             <h4 class="card-title">{{subject.name}}</h4>
             <p class="card-text">{{subject.description}}</p>
