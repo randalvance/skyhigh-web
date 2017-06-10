@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
-import { BoxContainerComponent, QuickStartCardComponent, TextInputComponent, ValidationComponent, WizardComponent, WizardStepComponent, LoaderComponent } from "./components";
+import { BoxContainerComponent, QuickStartCardComponent, LabelComponent, TextInputComponent, ValidationComponent, WizardComponent, WizardStepComponent, LoaderComponent } from "./components";
 
 @NgModule({
   imports: [
@@ -13,6 +13,7 @@ import { BoxContainerComponent, QuickStartCardComponent, TextInputComponent, Val
   exports: [
     BoxContainerComponent,
     QuickStartCardComponent,
+    LabelComponent,
     TextInputComponent,
     ValidationComponent,
     WizardComponent,
@@ -22,6 +23,7 @@ import { BoxContainerComponent, QuickStartCardComponent, TextInputComponent, Val
   declarations: [
     BoxContainerComponent,
     QuickStartCardComponent,
+    LabelComponent,
     TextInputComponent,
     ValidationComponent,
     WizardComponent,

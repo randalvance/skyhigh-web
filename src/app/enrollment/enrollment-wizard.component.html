@@ -14,7 +14,10 @@
       </app-box>
     </app-wizard-step>
     <app-wizard-step title="Complete">
-      <app-box>Content 3</app-box>
+      <app-box>
+        <app-enrollment-confirmation [student]="student$ | async" [selectedSubjects]="selectedSubjects$ | async"
+          (enrollmentCompleted)="completeEnrollment()"></app-enrollment-confirmation>
+      </app-box>
     </app-wizard-step>
   </app-wizard>
 </app-box>

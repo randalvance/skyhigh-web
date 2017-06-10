@@ -67,4 +67,8 @@ export class EnrollmentWizardComponent extends PageComponentBase implements OnIn
   proceedToSummary() {
     this.wizard.next();
   }
+
+  completeEnrollment() {
+    alert('enrollment complete!');
+  }
 }

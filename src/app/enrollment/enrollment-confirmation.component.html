@@ -1,0 +1,27 @@
+<div class="student-container">
+    <h3>Student to Enroll</h3>
+    <app-label label="First Name" [text]="student?.firstName"></app-label>
+    <app-label label="Last Name" [text]="student?.lastName"></app-label>
+</div>
+
+<div class="subjects-container">
+    <h3>Selected Subjects</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let subject of selectedSubjects">
+                <td>{{subject.name}}</td>
+                <td>{{subject.description}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="btn-group actions-container">
+    <button type="button" class="btn btn-primary" (click)="completeEnrollment()">Complete</button>
+</div>
