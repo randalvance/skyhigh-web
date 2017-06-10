@@ -1,0 +1,12 @@
+<app-box>
+  <table class="table">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    <tr *ngFor="let enrollment of enrollments$ | async">
+      <td>{{enrollment.student?.firstName}}</td>
+      <td>{{enrollment.student?.lastName}}</td>
+    </tr>
+  </table>
+</app-box>

@@ -7,7 +7,8 @@ export const EnrollmentSidebarItems: SidebarItem[] = [
       icon: 'university',
       displayOrder: 100,
       children: [
-        { text: 'Enroll New Student', route: 'enrollment' }
+        { text: 'Enroll New Student', route: 'enrollment' },
+        { text: 'All Enrollments', route: 'enrollments' }
       ]
   }
 ];

@@ -9,8 +9,11 @@ import { SubjectsModule } from '../subjects/subjects.module';
 import { EnrollmentConfirmationComponent } from './enrollment-confirmation.component';
 
 import { EnrollmentWizardComponent } from './enrollment-wizard.component';
+import { EnrollmentListComponent } from './enrollment-list.component';
 
 import { enrollmentRouting } from './enrollment.routing';
+import { EnrollmentService } from './enrollment.service';
+import { StudentsService } from '../students/students.service';
 
 @NgModule({
   imports: [
@@ -26,9 +29,12 @@ import { enrollmentRouting } from './enrollment.routing';
   exports: [EnrollmentWizardComponent],
   declarations: [
     EnrollmentConfirmationComponent,
+    EnrollmentListComponent,
     EnrollmentWizardComponent
   ],
-  providers: []
+  providers: [
+    EnrollmentService
+  ]
 })
 export class EnrollmentModule {
 

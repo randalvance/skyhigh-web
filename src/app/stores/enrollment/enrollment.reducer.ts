@@ -5,7 +5,7 @@ import { Subject } from '../../subjects';
 
 export interface EnrollmentState {
   student: Student;
-  selectedSubjects: Subject[]
+  selectedSubjects: Subject[];
 }
 
 const initialState: EnrollmentState = {

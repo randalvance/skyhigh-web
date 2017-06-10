@@ -1,14 +1,20 @@
 import { Component, AfterViewInit, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Response } from '@angular/http';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Subject as RxSubject } from 'rxjs/Subject';
-import { AppState, EnrollmentActions, LayoutActions, getEnrollmentStudent, getEnrollmentSelectedSubjects } from '../stores';
+import { AppState, EnrollmentActions, LayoutActions, getEnrollmentStudent, getEnrollmentSelectedSubjects, getEnrollmentToSave } from '../stores';
 import { PageComponentBase, WizardComponent } from '../shared';
 import { Student } from '../students';
 import { Subject } from '../subjects';
+import { Enrollment } from '../enrollment';
+import { EnrollmentService } from './enrollment.service';
+import { StudentsService } from '../students/students.service';
 
-import 'rxjs/add/operator/takeUntil';
+import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/takeUntil';
 
 @Component({
   templateUrl: 'enrollment-wizard.component.html'
@@ -18,17 +24,22 @@ export class EnrollmentWizardComponent extends PageComponentBase implements OnIn
 
   student$: Observable<Student>;
   selectedSubjects$: Observable<Subject[]>;
+  enrollment$: Observable<Enrollment>;
 
   private ngUnsubscribe: RxSubject<void> = new RxSubject<void>();
 
   constructor(store: Store<AppState>, layoutActions: LayoutActions,
-    private enrollmentActions: EnrollmentActions) {
+    private enrollmentActions: EnrollmentActions,
+    private enrollmentService: EnrollmentService,
+    private studentsService: StudentsService,
+    private router: Router) {
     super(store, layoutActions, 'Enrollment Wizard');
   }
 
   ngOnInit(): void {
     this.student$ = this.store.select(getEnrollmentStudent);
     this.selectedSubjects$ = this.store.select(getEnrollmentSelectedSubjects);
+    this.enrollment$ = this.store.select(getEnrollmentToSave);
 
     // Reset
     this.store.dispatch(this.enrollmentActions.setStudentToEnroll(null));
@@ -69,6 +80,26 @@ export class EnrollmentWizardComponent extends PageComponentBase implements OnIn
   }
 
   completeEnrollment() {
-    alert('enrollment complete!');
+    this.enrollment$
+      .takeUntil(this.ngUnsubscribe)
+      .subscribe(this.saveEnrollment.bind(this));
+  }
+
+  private saveEnrollment(enrollment: Enrollment) {
+    this.studentsService.add(enrollment.student)
+      .takeUntil(this.ngUnsubscribe)
+      .subscribe((response: Response) => {
+        var student = response.json();
+        var enrollmentToSave = Object.assign({}, enrollment, { student: student });
+
+        this.enrollmentService.add(enrollmentToSave)
+          .takeUntil(this.ngUnsubscribe)
+          .subscribe(enrollment => {
+            alert('Enrollment was saved successfully');
+            this.router.navigateByUrl('/enrollments');
+          }, err => {
+            alert('An error occured when saving the enrollment.');
+          });
+      });
   }
 }

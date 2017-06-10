@@ -4,8 +4,6 @@ import { ResourceServiceBase } from '../shared/services';
 import { Student } from './student';
 import { Observable, ObservableInput } from 'rxjs/Observable';
 
-import 'rxjs/add/observable/of';
-
 @Injectable()
 export class StudentsService extends ResourceServiceBase<Student> {
   constructor(http: Http) {
