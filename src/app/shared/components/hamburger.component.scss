@@ -1,0 +1,16 @@
+.hamburger {
+    height: 12px;
+    width: 30px;
+    margin: 12px 20px;
+    display: inline-block;
+    cursor: pointer;
+
+    .line {
+        height: 3px;
+        background-color: white;
+        
+        &.center {
+            margin: 5px 0;
+        }
+    }
+}

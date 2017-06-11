@@ -2,7 +2,17 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
-import { BoxContainerComponent, QuickStartCardComponent, LabelComponent, TextInputComponent, ValidationComponent, WizardComponent, WizardStepComponent, LoaderComponent } from "./components";
+import {
+  BoxContainerComponent,
+  HamburgerComponent,
+  LabelComponent,
+  LoaderComponent,
+  QuickStartCardComponent,
+  TextInputComponent, 
+  ValidationComponent, 
+  WizardComponent, 
+  WizardStepComponent
+} from "./components";
 
 @NgModule({
   imports: [
@@ -12,23 +22,25 @@ import { BoxContainerComponent, QuickStartCardComponent, LabelComponent, TextInp
   ],
   exports: [
     BoxContainerComponent,
-    QuickStartCardComponent,
+    HamburgerComponent,
     LabelComponent,
+    LoaderComponent,
+    QuickStartCardComponent,
     TextInputComponent,
     ValidationComponent,
     WizardComponent,
-    WizardStepComponent,
-    LoaderComponent
+    WizardStepComponent
   ],
   declarations: [
     BoxContainerComponent,
-    QuickStartCardComponent,
+    HamburgerComponent,
     LabelComponent,
+    LoaderComponent,
+    QuickStartCardComponent,
     TextInputComponent,
     ValidationComponent,
     WizardComponent,
-    WizardStepComponent,
-    LoaderComponent
+    WizardStepComponent
   ]
 })
 export class SharedModule {
