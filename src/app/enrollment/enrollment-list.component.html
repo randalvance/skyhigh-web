@@ -1,12 +1,35 @@
 <app-box>
-  <table class="table">
+  <table class="table app-table">
+    <thead>
     <tr>
       <th>First Name</th>
       <th>Last Name</th>
     </tr>
-    <tr *ngFor="let enrollment of enrollments$ | async">
-      <td>{{enrollment.student?.firstName}}</td>
-      <td>{{enrollment.student?.lastName}}</td>
-    </tr>
+    </thead>
+    <tbody *ngFor="let enrollment of enrollments$ | async">
+      <tr class="student-row" (click)="toggleSubjects(enrollment)">
+        <td>{{enrollment.student?.firstName}}</td>
+        <td>{{enrollment.student?.lastName}}</td>
+      </tr>
+      <!-- TODO: make this lazy loaded instead -->
+      <tr class="subjets-row" *ngIf="enrollment.subjectsShown" [@subjectRowAnimate]="enrollment.subjectsShown">
+        <td colspan="2">
+          <div class="subjects-panel">
+            <table class="table">
+              <thead>
+                <th>Subject Name</th>
+                <th>Description</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let subject of enrollment.subjects">
+                  <td>{{subject.name}}</td>
+                  <td>{{subject.description}}</td>
+                </tr>
+              <tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+    <tbody>
   </table>
 </app-box>
