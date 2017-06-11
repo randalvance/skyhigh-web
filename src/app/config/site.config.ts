@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 export const siteConfig : SiteConfig = {
-  siteName: 'Unknown Site'
+  siteName: 'SkyHigh University'
 }
 
 interface SiteConfig {

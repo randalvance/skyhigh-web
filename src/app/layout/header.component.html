@@ -1,5 +1,5 @@
 <div class="page-topbar">
-  <app-hamburger></app-hamburger>
+  <app-hamburger [state]="hamburgerState" (opened)="openSideMenu()" (closed)="closeSideMenu()"></app-hamburger>
   <div class="logo-area"><h1>SkyHigh University</h1></div>
   <div class="quick-area">
     <div class="pull-left"></div>

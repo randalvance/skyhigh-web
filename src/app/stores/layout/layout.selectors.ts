@@ -9,3 +9,4 @@ export const getLayoutState = (state: AppState) => {
 }
 export const getSelectedSidebarItemRoute = createSelector(getLayoutState, state => state.selectedSidebarItemRoute);
 export const getTitle = createSelector(getLayoutState, state => state.title);
+export const getSideBarState = createSelector(getLayoutState, state => state.sidebarState);

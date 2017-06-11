@@ -4,7 +4,6 @@ import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 import {
   BoxContainerComponent,
-  HamburgerComponent,
   LabelComponent,
   LoaderComponent,
   QuickStartCardComponent,
@@ -22,7 +21,6 @@ import {
   ],
   exports: [
     BoxContainerComponent,
-    HamburgerComponent,
     LabelComponent,
     LoaderComponent,
     QuickStartCardComponent,
@@ -33,7 +31,6 @@ import {
   ],
   declarations: [
     BoxContainerComponent,
-    HamburgerComponent,
     LabelComponent,
     LoaderComponent,
     QuickStartCardComponent,

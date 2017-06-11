@@ -14,7 +14,7 @@ import { SubjectsModule } from './subjects';
 
 import { AppComponent } from './app.component';
 import { Four04Component, WelcomeComponent } from './components';
-import { HeaderComponent, SidebarComponent, SidebarItemComponent } from './layout';
+import { HeaderComponent, HamburgerComponent, SidebarComponent, SidebarItemComponent } from './layout';
 
 import { ConfigurationService } from './shared/services';
 
@@ -24,6 +24,7 @@ import { appRouting } from './app.routing';
   declarations: [
     AppComponent,
     Four04Component,
+    HamburgerComponent,
     HeaderComponent,
     SidebarComponent,
     SidebarItemComponent,

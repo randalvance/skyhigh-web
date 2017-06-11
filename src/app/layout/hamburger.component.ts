@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
   trigger,
   state,
@@ -13,37 +13,43 @@ import {
     styleUrls: [ 'hamburger.component.scss' ],
     animations: [
         trigger('topBar', [
-            state('openned', style({
+            state('closed', style({
                 transform: 'rotate(0deg)'
             })),
-            state('closed', style({
+            state('opened', style({
                 transform: 'rotate(-40deg) translate(-4px, 2px)',
                 width: '15px'
             })),
-            transition('openned => closed', animate('300ms ease-in')),
-            transition('closed => openned', animate('300ms ease-in'))
+            transition('opened => closed', animate('300ms ease-in')),
+            transition('closed => opened', animate('300ms ease-in'))
         ]),
         trigger('bottomBar', [
-            state('openned', style({
+            state('closed', style({
                 transform: 'rotate(0deg)'
             })),
-            state('closed', style({
+            state('opened', style({
                 transform: 'rotate(40deg) translate(-3px, -2px)',
                 width: '15px'
             })),
-            transition('openned => closed', animate('300ms ease-in')),
-            transition('closed => openned', animate('300ms ease-in'))
+            transition('opened => closed', animate('300ms ease-in')),
+            transition('closed => opened', animate('300ms ease-in'))
         ])
     ]
 })
 export class HamburgerComponent {
-    state: string = 'openned';
+
+    @Output() opened: EventEmitter<any> = new EventEmitter();
+    @Output() closed: EventEmitter<any> = new EventEmitter();
+
+    @Input() state: string;
 
     toggleMenu() {
-        if (this.state == 'openned') {
+        if (this.state == 'opened') {
             this.state = 'closed';
+            this.closed.emit();
         } else {
-            this.state = 'openned';
+            this.state = 'opened';
+            this.opened.emit();
         }
     }
 }
