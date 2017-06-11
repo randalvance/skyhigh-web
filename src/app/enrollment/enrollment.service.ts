@@ -9,6 +9,6 @@ import 'rxjs/add/observable/of';
 @Injectable()
 export class EnrollmentService extends ResourceServiceBase<Enrollment> {
   constructor(http: Http) {
-    super(http, 'http://localhost:3000/api/', 'enrollments');
+    super(http, 'http://localhost:3001/api/', 'enrollments');
   }
 }
