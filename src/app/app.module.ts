@@ -42,7 +42,7 @@ import { appRouting } from './app.routing';
     StudentsModule,
     ProfessorsModule,
     SubjectsModule,
-
+    
     appRouting
   ],
   providers: [

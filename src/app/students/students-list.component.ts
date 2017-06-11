@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, HostBinding, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
@@ -25,6 +25,7 @@ export class StudentsListComponent extends PageComponentBase implements OnInit, 
   }
 
   ngOnInit(): void {
+    super.ngOnInit();
     this.subscriptions.add(this.studentsService.getAll().subscribe(students => {
       this.store.dispatch(this.studentActions.replaceStudents(students));
     }));

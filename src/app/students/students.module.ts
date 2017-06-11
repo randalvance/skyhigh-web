@@ -13,7 +13,6 @@ import { StudentsService } from './students.service';
     ReactiveFormsModule,
     HttpModule,
     studentRouting,
-
     SharedModule
   ],
   exports: [ StudentEditComponent, StudentEditFormComponent ],
