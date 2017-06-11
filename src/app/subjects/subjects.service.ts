@@ -10,6 +10,6 @@ import 'rxjs/add/observable/of';
 @Injectable()
 export class SubjectsService extends ResourceServiceBase<Subject> {
   constructor(http: Http) {
-    super(http, 'http://localhost:5001/api/', 'subjects');
+    super(http, 'http://localhost:8182/api/', 'subjects');
   }
 }
