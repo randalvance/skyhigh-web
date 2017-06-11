@@ -1,4 +1,4 @@
-<app-header [hamburgerState]="sideBarState$ | async" (hamburgerOpened)="openSideBar()" (hamburgerClosed)="closeSideBar()"></app-header>
+<app-header [siteName]="siteName" [hamburgerState]="sideBarState$ | async" (hamburgerOpened)="openSideBar()" (hamburgerClosed)="closeSideBar()"></app-header>
 <div class="page-container row-fluid container-fluid">
 
   <app-sidebar

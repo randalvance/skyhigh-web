@@ -9,6 +9,7 @@ export class HeaderComponent {
   @Output() hamburgerOpened: EventEmitter<any> = new EventEmitter<any>();
   @Output() hamburgerClosed: EventEmitter<any> = new EventEmitter<any>();
   @Input() hamburgerState: string;
+  @Input() siteName: string;
 
   openSideMenu() {
     this.hamburgerOpened.emit();

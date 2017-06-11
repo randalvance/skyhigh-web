@@ -23,7 +23,7 @@ import { SubjectsSidebarItems } from './subjects';
         
       })),
       state('closed', style({
-        'margin-left': '0'
+        'margin-left': '20px'
       })),
       transition('opened => closed', animate('300ms ease-in')),
       transition('closed => opened', animate('300ms ease-in'))
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    
   }
 
   changeSidebarItem(item: SidebarItem) {
