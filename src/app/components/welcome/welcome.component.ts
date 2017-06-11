@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -11,13 +12,15 @@ export class WelcomeComponent implements OnInit {
   lastName: string = 'Bar';
   title: string = '';
 
-  constructor() {
+  constructor(private router: Router) {
+
   }
 
   ngOnInit(): void {
   }
 
   enrollNewStudent() {
+    this.router.navigateByUrl('/enrollment');
   }
 
   enrollExistingStudent() {
