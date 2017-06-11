@@ -13,7 +13,7 @@ export abstract class ResourceServiceBase<T> {
     protected resourceUrl: string;
 
     constructor(private http: Http, private apiBaseUrl, private resource: string) {
-        this.resourceUrl = this.apiBaseUrl + (resource.startsWith('/') ? resource.substr(1) : resource);
+        this.resourceUrl = this.apiBaseUrl + '/api/' + (resource.startsWith('/') ? resource.substr(1) : resource);
     }
 
     public getAll(pageOptions?: PageOptions) : Observable<T[]>{
